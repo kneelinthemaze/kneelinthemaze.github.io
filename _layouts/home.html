@@ -2,6 +2,50 @@
 layout: default
 home: true
 ---
+<div id="next-post-countdown" style="text-align:center; margin-bottom: 2.5em; opacity: 0.85;">
+  <p style="margin-bottom: 0.3em; font-weight: 700; letter-spacing: 0.5px;">Next post in</p>
+  <p id="countdown-timer" style="font-size: 1.4em; font-weight: 700; letter-spacing: 1px;">--:--:--:--</p>
+</div>
+
+<script>
+  function updateCountdown() {
+    var now = new Date();
+
+    // Get current time in AEST (UTC+10, no daylight saving)
+    var utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+    var aestNow = new Date(utc + (10 * 3600000));
+
+    // Find next Sunday at 8:00 AM AEST
+    var target = new Date(aestNow);
+    var day = target.getDay(); // 0 = Sunday
+    var daysUntilSunday = (7 - day) % 7;
+
+    target.setDate(target.getDate() + daysUntilSunday);
+    target.setHours(8, 0, 0, 0);
+
+    // If it's already past 8am this Sunday, go to next Sunday
+    if (target <= aestNow) {
+      target.setDate(target.getDate() + 7);
+    }
+
+    var diff = target - aestNow;
+
+    if (diff < 0) diff = 0;
+
+    var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    function pad(n) { return n < 10 ? "0" + n : n; }
+
+    document.getElementById("countdown-timer").textContent =
+      days + "d " + pad(hours) + "h " + pad(minutes) + "m " + pad(seconds) + "s";
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
 
 <h3 class="posts-item-note" aria-label="Recent Posts">Recent Posts</h3>
 {%- for post in site.posts limit: site.number_of_posts -%}
