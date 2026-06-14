@@ -10,18 +10,3 @@
   <input type="range" id="font-slider" min="14" max="22" value="16" step="1" style="vertical-align: middle;">
   <label for="font-slider" style="font-size: 1.2em; margin-left: 8px;">aA</label>
 </div>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    var slider = document.getElementById("font-slider");
-    var saved = localStorage.getItem("fontSize");
-    if (saved) {
-      document.documentElement.style.fontSize = saved + "px";
-      slider.value = saved;
-    }
-    slider.addEventListener("input", function() {
-      document.documentElement.style.fontSize = this.value + "px";
-      localStorage.setItem("fontSize", this.value);
-    });
-  });
-</script>
