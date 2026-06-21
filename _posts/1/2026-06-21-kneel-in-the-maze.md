@@ -1,6 +1,7 @@
 ---
 title: Kneel in the Maze
 layout: post
+date: 2026-06-21 08:00:00 +1000
 ---
 # I want to revolutionise evangelism with words.
 
