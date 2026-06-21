@@ -33,6 +33,5 @@ To believe, we might need to Kneel in the Maze. (More on that soon.)
 
 I know I’m not there myself yet, but I’m always going to have down periods in my faith. I can’t let that stop me from starting this blog.
 
-> “But some were doubtful.” Matthew 28:17 (NASB)
 
-– Alex
+> “But some were doubtful.” Matthew 28:17 (NASB)
