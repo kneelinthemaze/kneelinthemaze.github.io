@@ -2,7 +2,6 @@
 title: Kneel in the Maze
 layout: post
 ---
-
 # I want to revolutionise evangelism with words.
 
 I’ve walked around wearing a cross necklace and trying to “show my light” by acting *sort* of nice but mainly arrogant but I’ve finally decided enough is enough.
