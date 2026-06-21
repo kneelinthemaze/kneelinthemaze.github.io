@@ -27,4 +27,4 @@ Links:
 [Instagram](https://www.instagram.com/kneelinthemaze)
 [TikTok](https://www.tiktok.com/@kneelinthemaze)
 
-<img src="/assets/img/selfie.jpg" alt="A selfie of me" width="300" style="border-radius: 12px;">
+<img src="/assets/img/IMG_3270.jpg" alt="A selfie of me" width="300" style="border-radius: 12px;">
