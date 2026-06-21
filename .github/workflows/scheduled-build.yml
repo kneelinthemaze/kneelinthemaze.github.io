@@ -1,0 +1,17 @@
+name: Scheduled rebuild for future posts
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger GitHub Pages build
+        run: |
+          curl -X POST \
+            -H "Authorization: token ${{ secrets.PAGES_ACCESS_TOKEN }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/repos/${{ github.repository }}/pages/builds
